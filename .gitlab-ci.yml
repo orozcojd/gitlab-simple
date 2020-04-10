@@ -1,0 +1,12 @@
+image: node
+
+stages:
+  - test
+  
+test_main:
+  stage: test
+  script: 
+    - npm install
+    - mocha
+  tags: 
+    - docker
