@@ -7,6 +7,6 @@ test_main:
   stage: test
   script: 
     - npm install
-    - mocha
+    - npm run test
   tags: 
     - docker
