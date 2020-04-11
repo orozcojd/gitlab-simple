@@ -1,12 +1,23 @@
 image: node
 
 stages:
+  - build
   - test
-  
-test_main:
+
+build: 
+  stage: build
+  script:
+    - echo "Building"
+    - npm install
+  artifacts: # way to preserve installation between stages
+    paths:
+      - node_modules
+    
+test:
   stage: test
   script: 
-    - npm install
+    #- npm install
+    - echo "Testing..."
     - npm run test
   tags: 
     - docker
